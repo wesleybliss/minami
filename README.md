@@ -1,3 +1,10 @@
+# Minami Custom Tags
+
+This is a slightly modified version of the great [Minami theme] with support for arbitrary custom tags.
+This template pairs with the [Custom Tags](https://github.com/wesleybliss/custom-tags-jsdoc-plugin.git) JSDoc plugin.
+
+#    
+
 # Minami
 
 A clean, responsive documentation template theme for JSDoc 3.
