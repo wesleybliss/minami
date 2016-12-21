@@ -41,14 +41,22 @@
 </header>
 
 <article>
+    
+    <!-- <pre><code><?js= JSON.stringify(doc, null, '    ') ?> -->
+    
     <div class="container-overview">
     <?js if (doc.kind === 'module' && doc.modules) { ?>
         <?js if (doc.description) { ?>
             <div class="description"><?js= doc.description ?></div>
         <?js } ?>
         
-        <?js if (doc.endpoint) { ?>
-            <div class="endpoint"><b>Endpoint:</b> <?js= doc.endpoint ?></div>
+        <!-- <h3>@todo OPTION FOR SECTION TITLE IN CONFIG?? ..Custom Props</h3> -->
+        <?js if (doc.custom) { ?>
+            <!-- <pre><code><?js= JSON.stringify(doc.custom, null, '    ') ?></code></pre> -->
+            <?js for (var i in doc.custom) { ?>
+                <b><?js= doc.custom[i].label ?></b> <?js= doc.custom[i].value ?>
+                <br />
+            <?js } ?>
         <?js } ?>
         
         <?js doc.modules.forEach(function(module) { ?>
