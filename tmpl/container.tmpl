@@ -1,3 +1,5 @@
+<!-- $template: container.tmpl -->
+
 <?js
     var self = this;
     var isGlobalPage;
@@ -43,20 +45,20 @@
 <article>
     
     <!-- <pre><code><?js= JSON.stringify(doc, null, '    ') ?> -->
+    <!-- <h3>@todo OPTION FOR SECTION TITLE IN CONFIG?? ..Custom Props</h3> -->
+    <?js if (doc.custom) { ?>
+        <!-- <pre><code><?js= JSON.stringify(doc.custom, null, '    ') ?></code></pre> -->
+        <?js for (var i in doc.custom) { ?>
+            <b><?js= doc.custom[i].label ?></b> <?js= doc.custom[i].value ?>
+            <br />
+        <?js } ?>
+    <?js } ?>
+    
     
     <div class="container-overview">
     <?js if (doc.kind === 'module' && doc.modules) { ?>
         <?js if (doc.description) { ?>
             <div class="description"><?js= doc.description ?></div>
-        <?js } ?>
-        
-        <!-- <h3>@todo OPTION FOR SECTION TITLE IN CONFIG?? ..Custom Props</h3> -->
-        <?js if (doc.custom) { ?>
-            <!-- <pre><code><?js= JSON.stringify(doc.custom, null, '    ') ?></code></pre> -->
-            <?js for (var i in doc.custom) { ?>
-                <b><?js= doc.custom[i].label ?></b> <?js= doc.custom[i].value ?>
-                <br />
-            <?js } ?>
         <?js } ?>
         
         <?js doc.modules.forEach(function(module) { ?>
